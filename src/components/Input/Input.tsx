@@ -1,10 +1,4 @@
-import {
-  DetailedHTMLProps,
-  FC,
-  HTMLAttributes,
-  InputHTMLAttributes,
-  forwardRef,
-} from 'react'
+import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from 'react'
 import cn from 'classnames'
 
 import styles from './Input.module.css'
