@@ -1,3 +1,9 @@
+import { Headling } from '@/components/Headling'
+
 export default function Cart() {
-  return <h1>Корзина</h1>
+  return (
+    <>
+      <Headling>Корзина</Headling>
+    </>
+  )
 }

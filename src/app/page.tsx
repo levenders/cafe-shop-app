@@ -1,13 +1,13 @@
-import { Button } from '@/components/Button'
-import { Input } from '@/components/Input'
+import { Headling } from '@/components/Headling'
+import { Search } from '@/components/Search'
 
-export default function Home() {
+import styles from './Menu.module.css'
+
+export default function Menu() {
   return (
-    <>
-      <h1>Меню</h1>
-      <Button>Button</Button>
-      <Button appearance="big">Button</Button>
-      <Input placeholder="Email" />
-    </>
+    <div className={styles.head}>
+      <Headling>Меню</Headling>
+      <Search placeholder="Введите блюдо или состав"></Search>
+    </div>
   )
 }

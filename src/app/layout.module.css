@@ -64,3 +64,8 @@
   gap: 10px;
   margin-top: auto;
 }
+
+.content {
+  padding: 40px 60px;
+  width: 100%;
+}
