@@ -1,0 +1,1 @@
+export { priceRu } from './helpers'

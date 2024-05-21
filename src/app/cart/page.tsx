@@ -1,4 +1,4 @@
-import { Headling } from '@/components/Headling'
+import { Headling } from '@/components'
 
 export default function Cart() {
   return (
