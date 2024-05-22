@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 interface IProductCardProps {
   id: number
-  title: string
+  name: string
   description: string
   image: string
   price: number
@@ -15,7 +15,7 @@ interface IProductCardProps {
 
 export const ProductCard: FC<IProductCardProps> = ({
   id,
-  title,
+  name,
   description,
   image,
   price,
@@ -42,7 +42,7 @@ export const ProductCard: FC<IProductCardProps> = ({
         </div>
       </div>
       <div className={styles.footer}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.name}>{name}</div>
         <div className={styles.description}>{description}</div>
       </div>
     </Link>
