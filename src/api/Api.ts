@@ -1,5 +1,3 @@
-const PREFIX = 'https://purpleschool.ru/pizza-api-demo/'
-
 interface IRequestProps {
   url: string
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
@@ -15,7 +13,7 @@ export async function ApiClient<IResponse>({
     'Content-Type': 'application/json',
   }
 
-  const response = await fetch(`${PREFIX}${url}`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_PREFIX}${url}`, {
     method,
     headers,
     body: body ? JSON.stringify(body) : undefined,
