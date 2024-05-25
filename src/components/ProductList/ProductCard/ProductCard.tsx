@@ -22,7 +22,7 @@ export const ProductCard: FC<IProductCardProps> = ({
   rating,
 }) => {
   return (
-    <Link href={`/menu/${id}`} className={styles.card}>
+    <Link href={`/product/${id}`} className={styles.card}>
       <div
         className={styles.header}
         style={{ backgroundImage: `url(${image})` }}
@@ -30,7 +30,7 @@ export const ProductCard: FC<IProductCardProps> = ({
         <div className={styles.price}>{priceRu(price)}</div>
         <button className={styles['add-to-cart']}>
           <Image
-            src="/plus.svg"
+            src="/ui-icons/plus.svg"
             width="25"
             height="25"
             alt="add-to-cart-button"
@@ -38,7 +38,12 @@ export const ProductCard: FC<IProductCardProps> = ({
         </button>
         <div className={styles.rating}>
           {rating}
-          <Image src="/star.svg" width="14" height="14" alt="rating-star" />
+          <Image
+            src="/ui-icons/star.svg"
+            width="14"
+            height="14"
+            alt="rating-star"
+          />
         </div>
       </div>
       <div className={styles.footer}>

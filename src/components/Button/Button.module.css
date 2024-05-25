@@ -9,6 +9,8 @@
   font-weight: 400;
   color: var(--white-color);
 
+  box-shadow: 18px 18px 36px 2px rgba(78, 84, 89, 0.35);
+
   cursor: pointer;
 
   background: var(--primery-color);

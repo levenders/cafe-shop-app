@@ -27,7 +27,7 @@ export const Search = forwardRef<HTMLInputElement, ISearchProps>(function Input(
       />
       <Image
         className={styles.icon}
-        src="/search.svg"
+        src="/ui-icons/search.svg"
         width="20"
         height="20"
         alt="search-logo"
