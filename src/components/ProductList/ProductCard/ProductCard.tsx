@@ -22,7 +22,7 @@ export const ProductCard: FC<IProductCardProps> = ({
   rating,
 }) => {
   return (
-    <Link href={`/product/${id}`} className={styles.card}>
+    <Link href={`/menu/${id}`} className={styles.card}>
       <div
         className={styles.header}
         style={{ backgroundImage: `url(${image})` }}

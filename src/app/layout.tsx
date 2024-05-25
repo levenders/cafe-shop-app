@@ -1,6 +1,5 @@
 'use client'
 
-// import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Open_Sans } from 'next/font/google'
 import './globals.css'
@@ -12,11 +11,6 @@ import cn from 'classnames'
 import { usePathname } from 'next/navigation'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
-
-// export const metadata: Metadata = {
-//   title: 'Cafe Shop',
-//   description: 'My pet-project for learning',
-// } ругается пока что почему то
 
 export default function RootLayout({
   children,
@@ -37,15 +31,16 @@ export default function RootLayout({
                 width="100"
                 height="100"
                 alt="avatar-logo"
+                priority={true}
               />
               <div className={styles.name}>Иван Иванов</div>
               <div className={styles.email}>ivanivano@ya.ru</div>
             </div>
             <div className={styles.menu}>
               <Link
-                href="/"
+                href="/menu"
                 className={cn(styles.link, {
-                  [styles.active]: pathname === '/',
+                  [styles.active]: pathname === '/menu',
                 })}
               >
                 <Image src="/menu.svg" width="30" height="30" alt="menu-logo" />
