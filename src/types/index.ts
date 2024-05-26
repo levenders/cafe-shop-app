@@ -1,2 +1,2 @@
 export * from './products.type'
-export * from './loginform.type'
+export * from './authrequestes.type'

@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label,
+.questionTitle {
+  color: var(--text-secondary-color);
+  font-size: 17px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.link {
+  font-size: 17px;
+  text-decoration: none;
+  color: var(--primery-color);
+}
+
+.error {
+  background: rgb(255, 68, 0, 0.85);
+  color: white;
+  padding: 20px;
+}

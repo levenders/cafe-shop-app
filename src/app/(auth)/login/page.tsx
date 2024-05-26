@@ -4,11 +4,14 @@ import { FormEvent, useState } from 'react'
 import Link from 'next/link'
 import { Button, Headling, Input } from '@/components'
 import styles from './login.module.css'
-import type { TLoginForm } from '@/types'
+import type { TAuthResponse, TAuthResponseError, TLoginForm } from '@/types'
 import { ApiClient } from '@/api/Api'
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
   const [error, setError] = useState<string | null>()
+
+  const { replace } = useRouter()
 
   const submit = (e: FormEvent) => {
     e.preventDefault()
@@ -16,12 +19,15 @@ export default function Login() {
     const target = e.target as typeof e.target & TLoginForm
     const { email, password } = target
 
-    ApiClient<TLoginForm[]>({
+    ApiClient<TAuthResponse | TAuthResponseError>({
       url: 'auth/login',
       method: 'POST',
       body: { email: email.value, password: password.value },
     })
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data)
+        replace('/menu')
+      })
       .catch((error) => setError('Неверный логин или пароль'))
   }
 
