@@ -7,7 +7,7 @@ import { Button, Headling, Input } from '@/components'
 
 import styles from './register.module.css'
 import Link from 'next/link'
-import type { TAuthResponse, TAuthResponseError, TRegisterForm } from '@/types'
+import type { TAuthResponse, TRegisterForm } from '@/types'
 
 export default function Register() {
   const [error, setError] = useState<string | null>()
@@ -20,7 +20,7 @@ export default function Register() {
     const target = e.target as typeof e.target & TRegisterForm
     const { name, email, password } = target
 
-    ApiClient<TAuthResponse | TAuthResponseError>({
+    ApiClient<TAuthResponse>({
       url: 'auth/register',
       method: 'POST',
       body: { name: name.value, email: email.value, password: password.value },

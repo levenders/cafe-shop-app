@@ -1,17 +1,22 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useActionState, useState } from 'react'
 import Link from 'next/link'
 import { Button, Headling, Input } from '@/components'
 import styles from './login.module.css'
-import type { TAuthResponse, TAuthResponseError, TLoginForm } from '@/types'
+import type { TAuthResponse, TLoginForm } from '@/types'
 import { ApiClient } from '@/api/Api'
 import { useRouter } from 'next/navigation'
+import { useDispatch } from 'react-redux'
+import { TAppDispatch } from '@/store'
+import { userActions } from '@/store/user.slice'
 
 export default function Login() {
   const [error, setError] = useState<string | null>()
 
   const { replace } = useRouter()
+
+  const dispatch = useDispatch<TAppDispatch>()
 
   const submit = (e: FormEvent) => {
     e.preventDefault()
@@ -19,13 +24,14 @@ export default function Login() {
     const target = e.target as typeof e.target & TLoginForm
     const { email, password } = target
 
-    ApiClient<TAuthResponse | TAuthResponseError>({
+    ApiClient<TAuthResponse>({
       url: 'auth/login',
       method: 'POST',
       body: { email: email.value, password: password.value },
     })
       .then((data) => {
-        console.log(data)
+        console.log(data.access_token)
+        dispatch(userActions.addToken(data.access_token))
         replace('/menu')
       })
       .catch((error) => setError('Неверный логин или пароль'))

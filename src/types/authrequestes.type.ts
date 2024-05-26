@@ -22,9 +22,3 @@ export type TRegisterForm = {
 export type TAuthResponse = {
   access_token: string
 }
-
-export type TAuthResponseError = {
-  message: string
-  error: string
-  statusCode: number
-}
