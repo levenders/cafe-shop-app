@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: linear scale 0.1s;
+}
+
+.backButton:hover {
+  scale: 1.2;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.image {
+  min-height: 378px;
+  min-width: 378px;
+  border-radius: 19px;
+  background-size: cover;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  min-width: 189px;
+}
+
+.price,
+.rate {
+  display: flex;
+  justify-content: start;
+
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  font-size: 24px;
+}
+
+.ingredients li {
+  margin-left: 20px;
+  color: var(--text-secondary-color);
+}
