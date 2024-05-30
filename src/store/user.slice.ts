@@ -1,8 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-
-export type TUserState = {
-  token: string | null
-}
+import type { TUserState } from '@/types'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState: TUserState = {
   token: null,

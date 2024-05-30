@@ -69,3 +69,14 @@
   padding: 40px 60px;
   width: 100%;
 }
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primery-color);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: var(--white-color);
+}

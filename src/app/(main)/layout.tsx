@@ -6,6 +6,9 @@ import { usePathname } from 'next/navigation'
 import cn from 'classnames'
 import styles from './layout.module.css'
 import { Button } from '@/components/Button'
+import { useRouter } from 'next/navigation'
+import { useSelector } from 'react-redux'
+import { TRootState } from '@/store'
 
 export default function RootLayout({
   children,
@@ -13,6 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const pathname = usePathname()
+
+  const { replace } = useRouter()
+
+  const items = useSelector((s: TRootState) => s.cart.items)
 
   return (
     <div className={styles.layout}>
@@ -41,6 +48,7 @@ export default function RootLayout({
               width="30"
               height="30"
               alt="menu-logo"
+              priority
             />
             Меню
           </Link>
@@ -55,17 +63,22 @@ export default function RootLayout({
               width="30"
               height="30"
               alt="cart-logo"
+              priority
             />
-            Корзина
+            Корзина{' '}
+            <span className={styles.count}>
+              {items.reduce((prev, curr) => (prev += curr.count), 0)}
+            </span>
           </Link>
         </div>
-        <Button className={styles.logout}>
+        <Button className={styles.logout} onClick={() => replace('/login')}>
           Выйти
           <Image
             src="/ui-icons/logout.svg"
             width="30"
             height="30"
             alt="logout-logo"
+            priority
           />
         </Button>
       </div>
