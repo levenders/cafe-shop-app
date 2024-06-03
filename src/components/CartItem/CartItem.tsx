@@ -3,9 +3,8 @@ import { useDispatch } from 'react-redux'
 import { TAppDispatch } from '@/store'
 import { cartActions } from '@/store/cart.slice'
 
-import styles from './cartItem.module.css'
-import { priceRu } from '@/helpers'
-import Image from 'next/image'
+import styles from './CartItem.module.css'
+import { getTotalCount, priceRu } from '@/helpers'
 
 interface ICartItemProps {
   id: number
@@ -24,13 +23,17 @@ export const CartItem: FC<ICartItemProps> = ({
 }) => {
   const dispatch = useDispatch<TAppDispatch>()
 
-  const removeToCart = () => {}
+  const removeToCart = () => {
+    dispatch(cartActions.remove(id))
+  }
 
   const addToCart = () => {
     dispatch(cartActions.add(id))
   }
 
-  const removeAll = () => {}
+  const removeAll = () => {
+    dispatch(cartActions.removeAll(id))
+  }
 
   return (
     <div className={styles.cartItem}>
@@ -43,30 +46,15 @@ export const CartItem: FC<ICartItemProps> = ({
         <div className={styles.price}>{priceRu(price)}</div>
       </div>
       <div className={styles.actions}>
-        <button className={styles.button} onClick={removeToCart}>
-          <Image
-            src="/ui-icons/plus.svg"
-            width="25"
-            height="25"
-            alt="remove-to-cart-button"
-          />
+        <button className={styles.removeButton} onClick={removeToCart}>
+          <span className={styles.minusIcon}></span>
         </button>
-        <span>{count}</span>
-        <button className={styles.button} onClick={addToCart}>
-          <Image
-            src="/ui-icons/plus.svg"
-            width="25"
-            height="25"
-            alt="add-to-cart-button"
-          />
-          <button className={styles.removeAllButton} onClick={removeAll}>
-            <Image
-              src="/ui-icons/plus.svg"
-              width="25"
-              height="25"
-              alt="remove-all-cart-button"
-            />
-          </button>
+        <span className={styles.count}>{getTotalCount(count)}</span>
+        <button className={styles.addButton} onClick={addToCart}>
+          <span className={styles.plusIcon}></span>
+        </button>
+        <button className={styles.removeAllButton} onClick={removeAll}>
+          <span className={styles.crossIcon}></span>
         </button>
       </div>
     </div>

@@ -16,8 +16,12 @@
   position: relative;
 }
 
-.icon {
+.searchIcon {
   position: absolute;
   left: 15px;
   top: 15px;
+  height: 20px;
+  width: 20px;
+  background-color: var(--text-color);
+  mask-image: url('/ui-icons/search.svg');
 }

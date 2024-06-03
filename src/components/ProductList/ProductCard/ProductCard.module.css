@@ -83,3 +83,17 @@
   scale: 1.1;
   opacity: 1;
 }
+
+.plusIcon {
+  width: 25px;
+  height: 25px;
+  background-color: var(--white-color);
+  mask-image: url('/ui-icons/plus.svg');
+}
+
+.rateIcon {
+  width: 16px;
+  height: 16px;
+  background-color: rgb(255, 140, 0);
+  mask-image: url('/ui-icons/star.svg');
+}

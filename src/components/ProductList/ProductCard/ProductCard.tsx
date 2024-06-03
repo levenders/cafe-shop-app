@@ -39,21 +39,11 @@ export const ProductCard: FC<IProductCardProps> = ({
       >
         <div className={styles.price}>{priceRu(price)}</div>
         <button className={styles['add-to-cart']} onClick={addToCart}>
-          <Image
-            src="/ui-icons/plus.svg"
-            width="25"
-            height="25"
-            alt="add-to-cart-button"
-          />
+          <span className={styles.plusIcon}></span>
         </button>
         <div className={styles.rating}>
           {rating}
-          <Image
-            src="/ui-icons/star.svg"
-            width="14"
-            height="14"
-            alt="rating-star"
-          />
+          <span className={styles.rateIcon}></span>
         </div>
       </div>
       <div className={styles.footer}>

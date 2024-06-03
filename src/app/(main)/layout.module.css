@@ -80,3 +80,25 @@
   height: 25px;
   color: var(--white-color);
 }
+
+.menuIcon,
+.cartIcon,
+.logoutIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.menuIcon {
+  background-color: var(--primery-color);
+  mask-image: url('/ui-icons/menu.svg');
+}
+
+.cartIcon {
+  background-color: var(--primery-color);
+  mask-image: url('/ui-icons/cart.svg');
+}
+
+.logoutIcon {
+  background-color: var(--white-color);
+  mask-image: url('/ui-icons/logout.svg');
+}

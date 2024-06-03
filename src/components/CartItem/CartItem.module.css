@@ -1,0 +1,108 @@
+.cartItem {
+  display: flex;
+  gap: 20px;
+
+  max-width: 500px;
+  margin-bottom: 27px;
+}
+
+.image {
+  height: 82px;
+  width: 82px;
+
+  background-size: cover;
+
+  border-radius: 20px;
+
+  box-shadow: 5px 5px 10px 2px rgba(78, 84, 89, 0.35);
+}
+
+.desciption {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name {
+  color: var(--text-color);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.price {
+  color: var(--primery-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.addButton,
+.removeButton,
+.removeAllButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: linear scale 0.2s;
+}
+
+.addButton:hover,
+.removeButton:hover,
+.removeAllButton:hover {
+  scale: 1.1;
+}
+.addButton,
+.removeButton {
+  border: 2px solid var(--primery-color);
+  box-shadow: 2px 2px 10px 2px rgba(78, 84, 89, 0.35);
+}
+
+.addButton {
+  background-color: var(--primery-color);
+}
+
+.removeButton {
+  background-color: inherit;
+}
+
+.removeAllButton {
+  margin-left: 10px;
+  border: none;
+  background-color: inherit;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.count {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.minusIcon,
+.plusIcon {
+  height: 25px;
+  width: 25px;
+}
+
+.minusIcon {
+  background-color: var(--primery-color);
+  mask-image: url('/ui-icons/minus.svg');
+}
+
+.plusIcon {
+  background-color: var(--white-color);
+  mask-image: url('/ui-icons/plus.svg');
+}
+
+.crossIcon {
+  height: 30px;
+  width: 30px;
+  background-color: var(--primery-color);
+  mask-image: url('/ui-icons/cross.svg');
+}

@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react'
 
 import styles from './cardPage.module.css'
 import { Button, Headling } from '@/components'
-import Image from 'next/image'
 import { priceRu } from '@/helpers'
 
 export default function CardPage() {
@@ -35,23 +34,12 @@ export default function CardPage() {
           <div className={styles.header}>
             <div className={styles.title}>
               <button className={styles.backButton} onClick={() => back()}>
-                <Image
-                  src="/ui-icons/back.svg"
-                  width="30"
-                  height="30"
-                  alt="back-button"
-                />
+                <span className={styles.backIcon}></span>
               </button>
               <Headling>{product.name}</Headling>
             </div>
             <Button className={styles.addButton}>
-              <Image
-                src="/ui-icons/cart.svg"
-                width="30"
-                height="30"
-                alt="cart-logo"
-              />
-              В корзину
+              <span className={styles.cartIcon}></span>В корзину
             </Button>
           </div>
           <div className={styles.body}>

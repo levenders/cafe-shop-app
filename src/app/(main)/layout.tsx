@@ -7,8 +7,9 @@ import cn from 'classnames'
 import styles from './layout.module.css'
 import { Button } from '@/components/Button'
 import { useRouter } from 'next/navigation'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { TRootState } from '@/store'
+import { userActions } from '@/store/user.slice'
 
 export default function RootLayout({
   children,
@@ -17,9 +18,16 @@ export default function RootLayout({
 }>) {
   const pathname = usePathname()
 
+  const dispatch = useDispatch()
+
   const { replace } = useRouter()
 
   const items = useSelector((s: TRootState) => s.cart.items)
+
+  const logout = () => {
+    dispatch(userActions.logout())
+    replace('/login')
+  }
 
   return (
     <div className={styles.layout}>
@@ -43,13 +51,7 @@ export default function RootLayout({
               [styles.active]: pathname === '/menu',
             })}
           >
-            <Image
-              src="/ui-icons/menu.svg"
-              width="30"
-              height="30"
-              alt="menu-logo"
-              priority
-            />
+            <span className={styles.menuIcon}></span>
             Меню
           </Link>
           <Link
@@ -58,28 +60,16 @@ export default function RootLayout({
               [styles.active]: pathname === '/cart',
             })}
           >
-            <Image
-              src="/ui-icons/cart.svg"
-              width="30"
-              height="30"
-              alt="cart-logo"
-              priority
-            />
+            <span className={styles.cartIcon}></span>
             Корзина{' '}
             <span className={styles.count}>
               {items.reduce((prev, curr) => (prev += curr.count), 0)}
             </span>
           </Link>
         </div>
-        <Button className={styles.logout} onClick={() => replace('/login')}>
+        <Button className={styles.logout} onClick={logout}>
           Выйти
-          <Image
-            src="/ui-icons/logout.svg"
-            width="30"
-            height="30"
-            alt="logout-logo"
-            priority
-          />
+          <span className={styles.logoutIcon}></span>
         </Button>
       </div>
       <div className={styles.content}>{children}</div>

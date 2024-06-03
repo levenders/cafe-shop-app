@@ -1,0 +1,42 @@
+.headling {
+  margin-bottom: 40px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 0px;
+  max-width: 512px;
+}
+
+.hr {
+  max-width: 512px;
+  margin: 0;
+  border: 1px solid var(--separator-color);
+}
+
+.text {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.totalText {
+  display: flex;
+  gap: 2px;
+}
+
+.count {
+  color: var(--text-secondary-color);
+}
+
+.price {
+  font-size: 19px;
+}
+
+.checkout {
+  margin-top: 70px;
+  max-width: 512px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
