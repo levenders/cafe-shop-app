@@ -1,5 +1,7 @@
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+
 import type { TUserState } from '@/types'
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createCookie, deleteCookie, getCookie } from '@/helpers'
 
 const initialState: TUserState = {
   token: null,
@@ -11,9 +13,11 @@ export const userSlice = createSlice({
   reducers: {
     addToken: (state, action: PayloadAction<string>) => {
       state.token = action.payload
+      createCookie(action.payload)
     },
     logout: (state) => {
       state.token = null
+      deleteCookie()
     },
   },
 })

@@ -30,11 +30,10 @@ export default function Login() {
       body: { email: email.value, password: password.value },
     })
       .then((data) => {
-        console.log(data.access_token)
         dispatch(userActions.addToken(data.access_token))
         replace('/menu')
       })
-      .catch((error) => setError('Неверный логин или пароль'))
+      .catch(() => setError('Неверный логин или пароль'))
   }
 
   return (
