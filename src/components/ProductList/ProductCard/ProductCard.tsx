@@ -1,12 +1,13 @@
-import { FC } from 'react'
-import Image from 'next/image'
-import styles from './ProductCard.module.css'
-import { priceRu } from '@/helpers'
 import Link from 'next/link'
 import { useDispatch } from 'react-redux'
-import { TAppDispatch } from '@/store'
-import { cartActions } from '@/store/cart.slice'
 
+import { cartActions } from '@/store/cart.slice'
+import { priceRu } from '@/helpers'
+
+import type { TAppDispatch } from '@/store'
+import type { FC } from 'react'
+
+import styles from './ProductCard.module.css'
 interface IProductCardProps {
   id: number
   name: string

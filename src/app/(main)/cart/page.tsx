@@ -1,15 +1,17 @@
 'use client'
 
-import { useSelector } from 'react-redux'
-import { Button, CartItem, Headling } from '@/components'
-import { TRootState } from '@/store'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/navigation'
+
+import { Button, CartItem, Headling } from '@/components'
 import { ApiClient } from '@/api/Api'
-import { TProductProps } from '@/types'
+import { priceRu } from '@/helpers'
+
+import type { TProductProps } from '@/types'
+import type { TRootState } from '@/store'
 
 import styles from './Cart.module.css'
-import { priceRu } from '@/helpers'
-import { useRouter } from 'next/navigation'
 
 const DELIVERY_PRICE = 169
 

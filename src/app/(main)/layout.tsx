@@ -1,15 +1,17 @@
 'use client'
 
+import { useRouter, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import cn from 'classnames'
-import styles from './layout.module.css'
-import { Button } from '@/components/Button'
-import { useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
-import { TRootState } from '@/store'
+import cn from 'classnames'
+
+import { Button } from '@/components/Button'
 import { userActions } from '@/store/user.slice'
+
+import type { TRootState } from '@/store'
+
+import styles from './layout.module.css'
 
 export default function RootLayout({
   children,

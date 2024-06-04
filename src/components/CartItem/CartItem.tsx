@@ -1,10 +1,12 @@
-import { FC } from 'react'
 import { useDispatch } from 'react-redux'
-import { TAppDispatch } from '@/store'
+
 import { cartActions } from '@/store/cart.slice'
+import { getTotalCount, priceRu } from '@/helpers'
+
+import type { FC } from 'react'
+import type { TAppDispatch } from '@/store'
 
 import styles from './CartItem.module.css'
-import { getTotalCount, priceRu } from '@/helpers'
 
 interface ICartItemProps {
   id: number

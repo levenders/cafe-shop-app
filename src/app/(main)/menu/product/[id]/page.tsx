@@ -1,13 +1,15 @@
 'use client'
 
-import { ApiClient } from '@/api/Api'
-import type { TProductProps } from '@/types'
-import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { useParams, useRouter } from 'next/navigation'
+
+import { Button, Headling } from '@/components'
+import { ApiClient } from '@/api/Api'
+import { priceRu } from '@/helpers'
+
+import type { TProductProps } from '@/types'
 
 import styles from './cardPage.module.css'
-import { Button, Headling } from '@/components'
-import { priceRu } from '@/helpers'
 
 export default function CardPage() {
   const [product, setProduct] = useState<TProductProps>()

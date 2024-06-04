@@ -1,5 +1,7 @@
-import { FC, HTMLAttributes, ReactNode } from 'react'
 import cn from 'classnames'
+
+import type { FC, HTMLAttributes, ReactNode } from 'react'
+
 import styles from './Headling.module.css'
 
 interface IHeadlingProps extends HTMLAttributes<HTMLHeadingElement> {

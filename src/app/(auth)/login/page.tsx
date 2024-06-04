@@ -1,15 +1,18 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import Link from 'next/link'
-import { Button, Headling, Input } from '@/components'
-import styles from './login.module.css'
-import type { TAuthResponse, TLoginForm } from '@/types'
-import { ApiClient } from '@/api/Api'
 import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
-import { TAppDispatch } from '@/store'
+import Link from 'next/link'
+
+import { Button, Headling, Input } from '@/components'
+import { ApiClient } from '@/api/Api'
 import { userActions } from '@/store/user.slice'
+
+import type { TAppDispatch } from '@/store'
+import type { TAuthResponse, TLoginForm } from '@/types'
+
+import styles from './login.module.css'
 
 export default function Login() {
   const [error, setError] = useState<string | null>()

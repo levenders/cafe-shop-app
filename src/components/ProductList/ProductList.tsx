@@ -1,6 +1,7 @@
-import { FC } from 'react'
-import type { TProductProps } from '@/types'
 import { ProductCard } from '@/components'
+
+import type { FC } from 'react'
+import type { TProductProps } from '@/types'
 
 import styles from './ProductList.module.css'
 

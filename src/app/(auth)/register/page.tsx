@@ -2,12 +2,14 @@
 
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { ApiClient } from '@/api/Api'
+import Link from 'next/link'
+
 import { Button, Headling, Input } from '@/components'
+import { ApiClient } from '@/api/Api'
+
+import type { TAuthResponse, TRegisterForm } from '@/types'
 
 import styles from './register.module.css'
-import Link from 'next/link'
-import type { TAuthResponse, TRegisterForm } from '@/types'
 
 export default function Register() {
   const [error, setError] = useState<string | null>()

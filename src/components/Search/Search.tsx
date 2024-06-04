@@ -1,6 +1,7 @@
-import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from 'react'
+import { forwardRef } from 'react'
 import cn from 'classnames'
-import Image from 'next/image'
+
+import type { DetailedHTMLProps, InputHTMLAttributes } from 'react'
 
 import styles from './Search.module.css'
 

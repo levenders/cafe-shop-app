@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import styles from './layout.module.css'
 
 export default function layout({

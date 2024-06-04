@@ -1,13 +1,15 @@
 'use client'
 
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { useDispatch } from 'react-redux'
 
-import styles from './Success.module.css'
 import { Button } from '@/components'
-import { TAppDispatch } from '@/store'
 import { cartActions } from '@/store/cart.slice'
+
+import type { TAppDispatch } from '@/store'
+
+import styles from './Success.module.css'
 
 export default function Success() {
   const { replace } = useRouter()

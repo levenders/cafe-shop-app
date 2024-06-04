@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react'
 
-import { Headling, Search } from '@/components'
+import { Headling, Search, ProductList } from '@/components'
+import { ApiClient } from '@/api/Api'
+
 import type { TProductProps } from '@/types'
 
 import styles from './Menu.module.css'
-import { ApiClient } from '@/api/Api'
-import { ProductList } from '@/components'
 
 export default function Menu() {
   const [products, setProducts] = useState<TProductProps[]>([])
